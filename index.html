@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beatriz Castro | Babysitter</title>
+    <link rel="icon" type="image/png" href="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/logomarcat3c0t4zfavicom.png">
+    <meta name="description" content="Serviços profissionais de babysitting em Toronto. Beatriz Castro é certificada em primeiros socorros (First Aid) e CPR, com experiência com crianças, idosos e pessoas com necessidades especiais.">
+    <meta name="keywords" content="babysitter, Toronto, babá, cuidadora, cuidados infantis, babá profissional, primeiros socorros, CPR">
+    <meta name="author" content="Beatriz Castro">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Beatriz Castro - Babá e Cuidadora Profissional em Toronto">
+    <meta property="og:description" content="Serviços de cuidado infantil e de idosos com experiência, certificações e muito carinho.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/bia-og-image.jpeg">
+    
+    <style>
+        /* CSS Reset and Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        :root {
+            --pink-500: #ec4899;
+            --pink-600: #db2777;
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            --green-500: #10b981;
+            --green-600: #059669;
+            --blue-500: #3b82f6;
+            --blue-600: #2563eb;
+            --yellow-400: #fbbf24;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: #ffffff;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--pink-500), var(--pink-600));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-and-lang {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--pink-500);
+        }
+
+        .lang-switcher button {
+            background: var(--gray-100);
+            border: 2px solid transparent;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .lang-switcher button:hover {
+            background: var(--gray-600);
+            color: white;
+        }
+        .lang-switcher button.active {
+            background: var(--pink-500);
+            color: white;
+            border-color: var(--pink-600);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it's above the nav */
+        }
+        
+        .mobile-nav-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .mobile-nav-container.active {
+            transform: translateX(0);
+            display: flex;
+        }
+        
+        .mobile-nav-container .nav-link {
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        .bg-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            transform: scale(1.05); /* Start slightly zoomed in */
+            animation: kenburns 30s infinite;
+        }
+        .bg-image:nth-child(2) {
+            animation-delay: 15s;
+        }
+        .bg-image.visible {
+            opacity: 1;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(254, 242, 248, 0.9) 0%, rgba(243, 232, 255, 0.85) 50%, rgba(254, 242, 248, 0.9) 100%);
+            z-index: -1;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--pink-500), var(--purple-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--pink-500), var(--purple-500));
+            color: white;
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: #ffffff;
+        }
+
+        .about-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image-column {
+            text-align: center;
+        }
+        
+        .profile-image-wrapper {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 1.5rem;
+            cursor: pointer;
+        }
+
+        .profile-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(135deg, var(--pink-500), var(--purple-500));
+            animation: spin 10s linear infinite;
+        }
+
+        .profile-ring-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .profile-image {
+            position: absolute;
+            inset: 16px;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .profile-image-wrapper:hover .profile-image {
+            transform: scale(1.1);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-mission {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 400px;
+            margin: 1rem auto 2rem;
+        }
+
+        .btn-secondary {
+            background: var(--purple-500);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
+        }
+
+        .qualifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .qualification-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--gray-50);
+            border-radius: 1rem;
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+        .qualification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--pink-200);
+        }
+
+        .check-icon {
+            color: var(--green-500);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Generic Section Styles */
+        .section {
+            padding: 5rem 2rem;
+        }
+        .bg-light {
+            background: linear-gradient(135deg, #fef2f8 0%, #f3e8ff 50%, #fef2f8 100%);
+        }
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .service-category {
+            margin-bottom: 3rem;
+        }
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--pink-200);
+            display: inline-block;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.15);
+        }
+        .service-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .service-card li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Schedule Section */
+        .schedule-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(168, 85, 247, 0.15);
+            max-width: 1000px;
+            margin: 4rem auto 0;
+        }
+        .schedule-card .section-header {
+            margin-bottom: 2.5rem;
+        }
+        .schedule-main-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .schedule-category {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--gray-100);
+        }
+        .schedule-category-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--purple-600);
+        }
+        .schedule-category-content ul {
+            list-style: none;
+        }
+        .schedule-category-content li {
+            padding: 0.4rem 0;
+        }
+        .schedule-category-content li strong {
+             color: var(--pink-600);
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .stars {
+            color: var(--yellow-400);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--pink-600);
+        }
+        .testimonial-location {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+        .testimonials-footer {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .contact-intro p {
+            margin-bottom: 0;
+            color: var(--gray-600);
+        }
+        .contact-connect-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background-size: 200% auto;
+        }
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background-position: right center;
+        }
+        .contact-btn svg {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+        .btn-whatsapp { background-image: linear-gradient(to right, #25D366 0%, #128C7E 51%, #25D366 100%); }
+        .btn-messenger { background-image: linear-gradient(to right, #00B2FF 0%, #006AFF 51%, #00B2FF 100%); }
+        .btn-email { background-image: linear-gradient(to right, #D44638 0%, #B23121 51%, #D44638 100%); }
+        .btn-instagram { background-image: linear-gradient(to right, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-100);
+            padding: 4rem 2rem 2rem;
+        }
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            font-size: 0.9rem;
+            color: var(--gray-400);
+        }
+
+        /* Floating iMessage Button */
+        .imessage-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .imessage-btn {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #4deb70, #34aadc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(52, 170, 220, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse-imessage 2.5s infinite;
+        }
+
+        .imessage-btn:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 12px 35px rgba(52, 170, 220, 0.5);
+            animation-play-state: paused;
+        }
+        
+        .imessage-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 90vw;
+            width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gray-100);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .modal-close:hover {
+            background: var(--pink-500);
+            color: white;
+            transform: rotate(90deg);
+        }
+        .modal-content h2 { margin-bottom: 2rem; text-align: center; }
+
+        /* Testimonials Modal Content */
+        .testimonial-full {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .testimonial-full:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .testimonial-full h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .recommendation-letter {
+            margin-bottom: 1.5rem;
+        }
+        .recommendation-letter h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        .recommendation-letter p, .recommendation-letter address {
+            white-space: pre-wrap;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes kenburns {
+            0%, 100% { transform: scale(1.05) translate(0, 0); }
+            50% { transform: scale(1.2) translate(-5%, 5%); }
+        }
+        @keyframes pulse-imessage {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 8px 25px rgba(52, 170, 220, 0.3);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 12px 35px rgba(52, 170, 220, 0.5);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 8px 25px rgba(52, 170, 220, 0.3);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .hero-title { font-size: 3.5rem; }
+            .hero-subtitle { font-size: 1.25rem; }
+            .section-title { font-size: 3rem; }
+            .section-subtitle { font-size: 1.25rem; }
+            .about-container { grid-template-columns: 300px 1fr; gap: 5rem; text-align: left;}
+            .about-image-column { text-align: center; }
+            .about-mission { margin: 1rem 0 2rem; }
+            .schedule-main-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr 1fr; }
+            .nav { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+
+        @media (max-width: 1023px) {
+            .nav-and-lang {
+                gap: 1rem;
+            }
+            .nav { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+        
+        @media (max-width: 767px) {
+            .header-container, .section {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            .section {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            .hero {
+                padding-top: 6rem;
+                padding-bottom: 3rem;
+            }
+             .contact-container {
+                padding: 2rem;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">B</div>
+                <span data-lang-key="logoText">Beatriz Castro</span>
+            </a>
+
+            <div class="nav-and-lang">
+                <nav class="nav" id="nav">
+                    <a href="#home" class="nav-link" data-lang-key="navHome">Início</a>
+                    <a href="#about" class="nav-link" data-lang-key="navAbout">Sobre</a>
+                    <a href="#services" class="nav-link" data-lang-key="navServices">Serviços</a>
+                    <a href="#testimonials" class="nav-link" data-lang-key="navTestimonials">Depoimentos</a>
+                    <a href="#contact" class="nav-link" data-lang-key="navContact">Contato</a>
+                </nav>
+
+                <div class="lang-switcher">
+                    <button id="lang-pt" class="active">PT</button>
+                    <button id="lang-en">EN</button>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+
+        <div class="mobile-nav-container" id="mobileNav">
+            <a href="#home" class="nav-link mobile-nav-link" data-lang-key="navHome">Início</a>
+            <a href="#about" class="nav-link mobile-nav-link" data-lang-key="navAbout">Sobre</a>
+            <a href="#services" class="nav-link mobile-nav-link" data-lang-key="navServices">Serviços</a>
+            <a href="#testimonials" class="nav-link mobile-nav-link" data-lang-key="navTestimonials">Depoimentos</a>
+            <a href="#contact" class="nav-link mobile-nav-link" data-lang-key="navContact">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <div class="bg-image visible" style="background-image:url('https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/bia1.jpeg')"></div>
+                <div class="bg-image" style="background-image:url('https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/bia2.jpeg')"></div>
+            </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span data-lang-key="heroTitle1">Cuidado e Carinho para</span><br>
+                        <span class="gradient-text" data-lang-key="heroTitle2">Quem Você Mais Ama</span>
+                    </h1>
+                    <p class="hero-subtitle" data-lang-key="heroSubtitle">
+                        Serviços profissionais de babá e cuidadora em Toronto. Experiência, certificações e um amor genuíno por cuidar de pessoas.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">
+                        <span data-lang-key="heroButton">Agende uma conversa</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="about-container">
+                <div class="about-image-column">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-ring"></div>
+                        <div class="profile-ring-inner"></div>
+                        <div class="profile-image">
+                            <img src="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/WhatsApp%20Image%202025-10-13%20at%2003.14.52.jpeg" alt="Beatriz Castro">
+                        </div>
+                    </div>
+                    <h2 class="about-name">Beatriz Castro</h2>
+                    <p class="about-mission" data-lang-key="missionText">
+                        ✨ Minha missão: Cuidar é mais do que um trabalho para mim — é um gesto de amor diário. Tenho orgulho do que faço e sou grata por cada família que confia em mim. 💖
+                    </p>
+                    <button id="openAboutModal" class="btn btn-secondary" data-lang-key="aboutMeButton">🌸 Sobre Mim</button>
+                </div>
+
+                <div class="about-content-column">
+                    <h2 class="section-title" style="text-align: left;">
+                        <span class="gradient-text" data-lang-key="whyChooseMe1">Por que me</span>
+                        <br>
+                        <span data-lang-key="whyChooseMe2">escolher?</span>
+                    </h2>
+                    <p class="section-subtitle" style="text-align: left; margin: 0 0 2rem 0;" data-lang-key="whyChooseMeSubtitle">
+                        Sou uma profissional dedicada ao bem-estar e desenvolvimento de cada pessoa, com certificações e experiência comprovada.
+                    </p>
+                    <div class="qualifications-grid">
+                        <div class="qualification-item">
+                            <span class="check-icon">✅</span>
+                            <span data-lang-key="qualificationsCPR">Certificada em CPR (reanimação cardiorrespiratória)</span>
+                        </div>
+                        <div class="qualification-item">
+                            <span class="check-icon">✅</span>
+                            <span data-lang-key="qualificationsFirstAid">Certificada em First Aid (primeiros socorros)</span>
+                        </div>
+                        <div class="qualification-item">
+                            <span class="check-icon">✅</span>
+                            <span data-lang-key="qualificationsLanguages">Falo inglês, português e espanhol</span>
+                        </div>
+                         <div class="qualification-item">
+                            <span class="check-icon">✅</span>
+                            <span data-lang-key="qualificationsExperience">Experiência com crianças, idosos e pessoas com necessidades especiais</span>
+                        </div>
+                         <div class="qualification-item">
+                            <span class="check-icon">✅</span>
+                            <span data-lang-key="qualificationsReferences">Referências verificadas</span>
+                        </div>
+                         <div class="qualification-item">
+                            <span class="check-icon">✅</span>
+                            <span data-lang-key="qualificationsBackground">Background check aprovado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section bg-light">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="servicesTitle">⭐ Meus Serviços</h2>
+                <p class="section-subtitle" data-lang-key="servicesSubtitle">Ofereço cuidados personalizados e de qualidade para cada necessidade, com foco no bem-estar e na segurança.</p>
+            </div>
+            <div class="services-container">
+                <div class="service-category">
+                    <h3 class="category-title" data-lang-key="servicesOfferTitle">🧸 O que posso oferecer</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h4 data-lang-key="servicesOffer1Title">Rotinas e Alimentação</h4>
+                            <p data-lang-key="servicesOffer1Desc">Rotinas diárias de cuidado e alimentação.</p>
+                        </div>
+                        <div class="service-card">
+                            <h4 data-lang-key="servicesOffer2Title">Atividades Criativas</h4>
+                            <p data-lang-key="servicesOffer2Desc">Atividades educativas e criativas.</p>
+                        </div>
+                         <div class="service-card">
+                            <h4 data-lang-key="servicesOffer3Title">Passeios ao Ar Livre</h4>
+                            <p data-lang-key="servicesOffer3Desc">Passeios ao ar livre e caminhadas no parque.</p>
+                        </div>
+                         <div class="service-card">
+                            <h4 data-lang-key="servicesOffer4Title">Apoio Escolar</h4>
+                            <p data-lang-key="servicesOffer4Desc">Cuidados após a escola e preparo de refeições.</p>
+                        </div>
+                         <div class="service-card">
+                            <h4 data-lang-key="servicesOffer5Title">Rotinas de Sono</h4>
+                            <p data-lang-key="servicesOffer5Desc">Apoio nas rotinas de sono e cuidados noturnos.</p>
+                        </div>
+                        <div class="service-card">
+                            <h4 data-lang-key="servicesOffer6Title">Cuidados Especiais</h4>
+                            <p data-lang-key="servicesOffer6Desc">Assistência a pessoas com deficiências e necessidades especiais.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="service-category">
+                    <h3 class="category-title" data-lang-key="servicesExperienceTitle">👶 Experiência com faixas etárias</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h4><span style="font-size: 1.5rem;">👶</span> <span data-lang-key="servicesExperience1">Recém-nascidos</span></h4>
+                        </div>
+                         <div class="service-card">
+                            <h4><span style="font-size: 1.5rem;">🍼</span> <span data-lang-key="servicesExperience2">Bebês (principal especialidade)</span></h4>
+                        </div>
+                        <div class="service-card">
+                            <h4><span style="font-size: 1.5rem;">🧒</span> <span data-lang-key="servicesExperience3">Crianças em idade escolar</span></h4>
+                        </div>
+                        <div class="service-card">
+                            <h4><span style="font-size: 1.5rem;">💛</span> <span data-lang-key="servicesExperience4">Adultos com deficiência</span></h4>
+                        </div>
+                        <div class="service-card">
+                            <h4><span style="font-size: 1.5rem;">👵</span> <span data-lang-key="servicesExperience5">Idosos com necessidades especiais</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="schedule-card">
+                 <div class="section-header">
+                    <h2 class="section-title" data-lang-key="scheduleTitle" style="font-size: 2rem; margin-bottom: 0;">🕐 Horários e Disponibilidade</h2>
+                 </div>
+                 <div class="schedule-main-grid">
+                    <div class="schedule-category">
+                        <h3 class="schedule-category-title" data-lang-key="scheduleWeekTitle">🗓️ Durante a semana</h3>
+                        <div class="schedule-category-content">
+                            <ul>
+                                <li data-lang-key="scheduleWeekDesc">Segunda a sexta-feira, das 8am às 7pm</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="schedule-category">
+                        <h3 class="schedule-category-title" data-lang-key="scheduleWeekendTitle">🕘 Fim de semana</h3>
+                        <div class="schedule-category-content">
+                            <ul>
+                                <li data-lang-key="scheduleWeekendDesc1">Sábado, das 9am às 11pm</li>
+                                <li data-lang-key="scheduleWeekendDesc2">Domingo, das 9am às 6pm</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="schedule-category">
+                        <h3 class="schedule-category-title" data-lang-key="scheduleOptionsTitle">💡 Opções de serviço</h3>
+                        <div class="schedule-category-content">
+                            <ul>
+                                <li data-lang-key="scheduleOptions1"><strong>Part-time:</strong> mínimo de 4h por dia</li>
+                                <li data-lang-key="scheduleOptions2"><strong>Full-time:</strong> mínimo de 8h por dia</li>
+                                <li data-lang-key="scheduleOptions3"><strong>Overnight:</strong> mínimo de 4h por noite</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="schedule-category">
+                        <h3 class="schedule-category-title" data-lang-key="scheduleRatesTitle">💰 Valores</h3>
+                        <div class="schedule-category-content">
+                             <ul>
+                                <li data-lang-key="scheduleRates1"><strong>Segunda a sexta-feira:</strong> $25/hora</li>
+                                <li data-lang-key="scheduleRates2"><strong>Finais de semana:</strong> $30/hora</li>
+                                <li data-lang-key="scheduleRates3"><strong>Feriados:</strong> $35/hora</li>
+                            </ul>
+                        </div>
+                     </div>
+                 </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section">
+             <div class="section-header">
+                <h2 class="section-title" data-lang-key="testimonialsTitle">💬 O que os Pais Dizem</h2>
+                <p class="section-subtitle" data-lang-key="testimonialsSubtitle">Depoimentos resumidos de famílias satisfeitas com meus serviços.</p>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text" data-lang-key="testimonial1Text">“Beatriz é uma excelente profissional! Meus filhos adoram passar o tempo com ela. Muito responsável e carinhosa.”</p>
+                    <div>
+                        <div class="testimonial-author">— Carolina Fontanella</div>
+                        <div class="testimonial-location">(Scarborough, ON)</div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                 <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text" data-lang-key="testimonial2Text">“Muito paciente e dedicada. Sempre pontual, carinhosa e confiável. Meu filho ama os momentos com ela.”</p>
+                    <div>
+                        <div class="testimonial-author">— Laiane Rodrigues</div>
+                        <div class="testimonial-location">(Toronto, ON)</div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                 <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text" data-lang-key="testimonial3Text">“Recomendo 100%! Sempre atenciosa e muito profissional. Meu filho ama os dias em que ela vem cuidar dele.”</p>
+                    <div>
+                        <div class="testimonial-author">— Ekaterine & Maicon</div>
+                        <div class="testimonial-location">(North York, ON)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-footer">
+                <button id="openTestimonialsModal" class="btn btn-primary" data-lang-key="testimonialsButton">💬 Depoimentos Completos das Famílias</button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section bg-light">
+             <div class="section-header">
+                <h2 class="section-title"><span class="gradient-text" data-lang-key="contactTitle">Entre em Contato</span></h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-intro">
+                    <h3 data-lang-key="contactInfoTitle">💜 Informações de Contato</h3>
+                    <p data-lang-key="contactInfoSubtitle">⭐ Babá e cuidadora experiente e carinhosa em Toronto<br>Certificada em CPR & First Aid | Confiável & Amorosa 💛</p>
+                </div>
+
+                <h3 class="contact-connect-title" data-lang-key="contactConnectTitle">💌 Conecte-se Comigo</h3>
+                
+                <div class="contact-grid">
+                    <a href="https://wa.me/14372560384" target="_blank" class="contact-btn btn-whatsapp">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://m.me/@beatriz.venturadecastro" target="_blank" class="contact-btn btn-messenger">
+                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111C24 4.975 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>
+                        <span>Messenger</span>
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=beatrizcastrocare.toronto@gmail.com" target="_blank" class="contact-btn btn-email">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>E-mail</span>
+                    </a>
+                     <a href="https://www.instagram.com/beatrizcastrocare.toronto" target="_blank" class="contact-btn btn-instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.2,5.2 0,0 1,16.2 22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.2,5.2 0,0 1,7.8 2M7.6,4A3.6,3.6 0,0 0,4 7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0,0 0,20 16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0,0 1,18.5 6.75A1.25,1.25 0,0 1,17.25 8A1.25,1.25 0,0 1,16 6.75A1.25,1.25 0,0 1,17.25 5.5M12,7A5,5 0,0 1,17 12A5,5 0,0 1,12 17A5,5 0,0 1,7 12A5,5 0,0 1,12 7M12,9A3,3 0,0 0,9 12A3,3 0,0 0,12 15A3,3 0,0 0,15 12A3,3 0,0 0,12 9Z"></path></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p data-lang-key="footerRights">© 2025 Beatriz Castro Care. Todos os direitos reservados.</p>
+            <p data-lang-key="footerMadeWith">Feito com ❤️ no 🇧🇷 para o 🇨🇦</p>
+        </div>
+    </footer>
+
+    <!-- Floating iMessage Button -->
+    <div class="imessage-float">
+        <a href="sms:+14372560384" class="imessage-btn" aria-label="Enviar iMessage">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32px" height="32px">
+                <path d="M20 2H4C2.89543 2 2 2.89543 2 4V22L6 18H20C21.1046 18 22 17.1046 22 16V4C22 2.89543 21.1046 2 20 2Z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- About Me Modal -->
+    <div class="modal-overlay" id="aboutModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeAboutModal">&times;</button>
+            <h2 data-lang-key="aboutModalTitle">🌸 Sobre Mim</h2>
+            <p data-lang-key="aboutModalP1">
+                Olá, famílias! 🌷<br>
+                Meu nome é Beatriz, tenho 24 anos, sou brasileira e moro no Canadá há dois anos.
+            </p>
+            <p data-lang-key="aboutModalP2">
+                Desde que cheguei, trabalho como babá profissional — não apenas por profissão, mas por amor ao que faço.
+                Cuidar de crianças me traz felicidade e propósito: acompanhar o crescimento, o aprendizado e o sorriso de cada pequeno é o que me motiva todos os dias. 💛
+            </p>
+            <p data-lang-key="aboutModalP3">
+                Tenho mais de 6 anos de experiência com crianças, adultos e idosos, incluindo pessoas com deficiências e necessidades especiais. Sou uma pessoa responsável, paciente e dedicada, certificada em Primeiros Socorros (First Aid) e RCP (CPR).
+            </p>
+            <p data-lang-key="aboutModalP4">
+                Meu foco principal é o cuidado com bebês e crianças pequenas, oferecendo um ambiente seguro, amoroso e acolhedor, onde cada criança possa se sentir protegida e feliz.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Testimonials Modal -->
+    <div class="modal-overlay" id="testimonialsModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeTestimonialsModal">&times;</button>
+            <h2 data-lang-key="testimonialsModalTitle">💬 Depoimentos Completos</h2>
+            
+            <div id="testimonials-content-pt">
+                <!-- Carolina -->
+                <div class="testimonial-full">
+                    <h3>Carolina Fontanella</h3>
+                    <div class="recommendation-letter">
+                        <h4>💛 Tradução para o Português</h4>
+                        <p>19 de outubro de 2025<br>Toronto, ON</p>
+                        <p>A quem possa interessar,</p>
+                        <p>Tenho o prazer de recomendar Beatriz Castro, que recentemente começou a ajudar nossa família como babá no período da manhã. Beatriz cuida de nossos dois filhos (de 1 e 4 anos) e rapidamente se tornou uma presença confiável em nosso lar.</p>
+                        <p>Desde o início, Beatriz nos impressionou com sua dedicação e carinho, envolvendo as crianças com muito afeto e energia durante nossas manhãs agitadas. Ela ajuda no café da manhã, prepara os lanches e organiza as crianças para o dia. Também auxilia na arrumação da casa e em pequenas tarefas domésticas, o que tem sido um grande apoio para nossa família.</p>
+                        <p>Valorizamos muito o trabalho da Beatriz e a recomendamos com confiança. Sinta-se à vontade para entrar em contato caso precise de mais informações.</p>
+                        <p>Atenciosamente,<br>Carolina Fontanella<br>📞 647-572-0756</p>
+                    </div>
+                </div>
+                <!-- Layane -->
+                <div class="testimonial-full">
+                    <h3>Layane de Paula</h3>
+                     <div class="recommendation-letter">
+                        <h4>💛 Tradução para o Português</h4>
+                        <p>A quem possa interessar,</p>
+                        <p>Escrevo para recomendar de todo o coração a Beatriz, que tem cuidado do meu filho, Cole Jr., nos últimos sete meses. Desde o início, Beatriz demonstrou não apenas um talento natural com crianças, mas também um nível de gentileza, paciência e atenção que imediatamente me tranquilizou.</p>
+                        <p>Como mãe, confiar o seu filho a alguém não é uma decisão simples. Beatriz conquistou essa confiança rapidamente. Ela é confiável, carinhosa e sempre muito envolvida com o Cole Jr., seja através de brincadeiras criativas, apoio na rotina diária ou oferecendo um ambiente seguro e amoroso. Sua presença calma e seu carinho genuíno por ele são evidentes todos os dias.</p>
+                        <p>Sempre que saio, fico tranquila, pois sei que ela cuidará dele com amor, atenção e o mesmo cuidado que eu teria. Essa tranquilidade é rara, e sou imensamente grata por tê-la encontrado.</p>
+                        <p>Se desejar falar comigo diretamente, entre em contato pelo telefone ou WhatsApp: 647-233-2931. Caso eu não possa atender no momento, envie uma mensagem e retornarei assim que possível.</p>
+                        <p>Atenciosamente,<br>Layane de Paula<br>📍 55 Harbour Square, Toronto, ON M5J 2L1<br>📞 647-233-2931</p>
+                    </div>
+                </div>
+                <!-- Ariane -->
+                <div class="testimonial-full">
+                    <h3>Ariane (Mãe do Oliver)</h3>
+                     <div class="recommendation-letter">
+                        <h4>💛 Tradução para o Português</h4>
+                        <p>Data: 18 de setembro de 2024</p>
+                        <p>A quem possa interessar,</p>
+                        <p>É com grande prazer que escrevo esta carta de recomendação para Beatriz Ventura, que trabalhou como babá do meu filho Oliver, de 1 ano e 3 meses, por três meses (de janeiro a abril). Durante esse período, Beatriz demonstrou um nível excepcional de cuidado, atenção e dedicação ao bem-estar do meu filho.</p>
+                        <p>Beatriz sempre foi extremamente pontual e responsável, atendendo a todas as necessidades do Oliver com muita paciência e carinho. Sua natureza acolhedora permitiu que desenvolvesse rapidamente um vínculo especial com ele, oferecendo um ambiente seguro e amoroso no qual sempre nos sentimos confortáveis em deixá-lo sob seus cuidados.</p>
+                        <p>Além de ser muito carinhosa, Beatriz também mantinha o ambiente limpo e organizado, cuidando das tarefas relacionadas ao bebê com muita atenção. Ela ia além do esperado, organizando atividades divertidas e educativas, como passeios ao parque, momentos de leitura e brincadeiras criativas que contribuíram para o desenvolvimento de Oliver. Sua presença tornava cada dia especial e alegre para ele.</p>
+                        <p>Recomendo Beatriz Ventura com total confiança a qualquer família que procure uma babá confiável, atenciosa e dedicada. Tenho certeza de que será uma grande adição à vida de qualquer criança.</p>
+                        <p>Atenciosamente,<br>Ariane<br>Mãe do Oliver<br>📞 +1 (514) 707-1458</p>
+                    </div>
+                </div>
+                 <!-- Rosa -->
+                <div class="testimonial-full">
+                    <h3>Rosa Rumeo</h3>
+                     <div class="recommendation-letter">
+                        <h4>💛 Tradução para o Português</h4>
+                        <p>Escrevo esta carta para recomendar altamente Beatriz Castro, que trabalhou — e ainda realiza alguns turnos — como cuidadora da minha mãe, Angela Rumeo. Durante o tempo em que estiveram juntas, Beatriz demonstrou qualidades excepcionais como cuidadora, superando todas as minhas expectativas.</p>
+                        <p>Beatriz é incrivelmente gentil, inteligente, intuitiva e profundamente compassiva. Ela tem uma habilidade natural para se conectar com minha mãe, oferecendo não apenas excelente cuidado físico, mas também um apoio emocional genuíno.</p>
+                        <p>Sua atenção aos detalhes, confiabilidade e dedicação garantiram que minha mãe sempre estivesse em boas mãos — tanto em termos de saúde quanto de bem-estar emocional. O que mais se destaca em Beatriz é sua capacidade de se manter totalmente focada nos melhores interesses da minha mãe, sempre indo além para garantir que ela estivesse confortável, segura e sorridente.</p>
+                        <p>Beatriz teve a sensibilidade de compreender as necessidades da minha mãe, cuja doença afeta sua fala e comunicação. Embora tenha sido difícil no início, Beatriz ajustou suas rotinas com paciência e positividade para atender às necessidades em constante mudança.</p>
+                        <p>É evidente que Beatriz é apaixonada pelo seu trabalho, e essa paixão se reflete em seu cuidado genuíno e abordagem atenciosa. Recomendo Beatriz Castro sem qualquer hesitação como cuidadora.</p>
+                        <p>Entre em contato comigo caso precise de mais informações.</p>
+                        <p>Atenciosamente,<br>Rosa Rumeo<br>📞 416-317-0768<br>📧 rosarumeo@gmail.com</p>
+                    </div>
+                </div>
+                <!-- Ekaterini e Maicon -->
+                <div class="testimonial-full">
+                    <h3>Ekaterini e Maicon</h3>
+                     <div class="recommendation-letter">
+                        <h4>💛 Tradução para o Português</h4>
+                        <p>1º de outubro de 2025</p>
+                        <p>A quem possa interessar,</p>
+                        <p>Tivemos o prazer de contar com os cuidados de Beatriz (“Bibica”) com nosso filho (de 4 anos), e não poderíamos recomendá-la mais. Ela sempre foi pontual e confiável, o que nos trouxe total tranquilidade.</p>
+                        <p>Beatriz planeja atividades divertidas e educativas com muito cuidado, mas também é flexível e aberta a sugestões. Ela sempre leva em consideração os pedidos e preferências de nosso filho, mantendo-o animado e feliz.</p>
+                        <p>O mais importante é que ela é extremamente carinhosa e paciente com as crianças — elas adoram passar tempo com ela (inclusive nossa filha de 1 ano). Na verdade, nosso filho frequentemente pergunta onde está a “Bibica” nos dias em que ela não vem, o que mostra o vínculo especial que construíram.</p>
+                        <p>Embora nossas necessidades de cuidados tenham mudado, ainda chamamos Beatriz de vez em quando, por causa da linda conexão que ela mantém com nossa família. Qualquer família seria muito sortuda em tê-la.</p>
+                        <p>Sinta-se à vontade para entrar em contato caso queira saber mais sobre nossa experiência.</p>
+                        <p>Atenciosamente,<br>Ekaterini e Maicon<br>📞 647-686-0524</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="testimonials-content-en" style="display: none;">
+                 <!-- Carolina -->
+                <div class="testimonial-full">
+                    <h3>Carolina Fontanella</h3>
+                    <div class="recommendation-letter">
+                        <h4>💼 English Version</h4>
+                        <p>October 19, 2025<br>Toronto, ON</p>
+                        <p>To Whom It May Concern,</p>
+                        <p>I’m happy to recommend Beatriz Castro, who recently started helping our family as our morning nanny. Beatriz cares for our two sons (ages 1 and 4) and has quickly become a reliable presence in our home.</p>
+                        <p>From the start, Beatriz impressed us with her dedication and caring nature, engaging the kids with warmth and energy during our busy mornings. She helps them with breakfast, prepares lunches, and gets the kids ready for the day. She also helps tidy up and with light housekeeping, which has been a huge support to our family.</p>
+                        <p>We truly value and recommend her. Please feel free to reach out if you have any questions.</p>
+                        <p>Sincerely,<br>Carolina Fontanella<br>📞 647-572-0756</p>
+                    </div>
+                </div>
+                <!-- Layane -->
+                <div class="testimonial-full">
+                    <h3>Layane de Paula</h3>
+                     <div class="recommendation-letter">
+                        <h4>💼 English Version</h4>
+                        <p>To Whom It May Concern,</p>
+                        <p>I am writing to wholeheartedly recommend Beatriz, who has been caring for my son, Cole Jr., for the past seven months. From the very beginning, Beatriz has demonstrated not only a natural ability with children but also a level of kindness, patience, and attentiveness that immediately put me at ease.</p>
+                        <p>As a parent, trusting someone with your child is no small decision. Beatriz quickly earned that trust. She is reliable, nurturing, and always fully engaged with Cole Jr., whether it’s through creative play, supporting his daily routines, or simply providing a safe and loving environment. Her calm presence and genuine affection for him are evident every day.</p>
+                        <p>Every time I leave, I don’t worry, because I know she will care for him with love, attention, and the same thoughtfulness I would give myself. That kind of peace of mind is rare, and I’m incredibly grateful to have found it with her.</p>
+                        <p>If you’d like to speak with me directly, please feel free to call or send a WhatsApp message at 647-233-2931. If I can’t take the call, please text me, and I’ll call back as soon as I can.</p>
+                        <p>Warm regards,<br>Layane de Paula<br>📍 55 Harbour Square, Toronto, ON M5J 2L1<br>📞 647-233-2931</p>
+                    </div>
+                </div>
+                <!-- Ariane -->
+                <div class="testimonial-full">
+                    <h3>Ariane (Mother of Oliver)</h3>
+                     <div class="recommendation-letter">
+                        <h4>💼 English Version</h4>
+                        <p>Date: September 18, 2024</p>
+                        <p>To Whom It May Concern,</p>
+                        <p>It is with great pleasure that I write this reference letter for Beatriz Ventura, who worked as a nanny for my son Oliver, aged 1 year and 3 months, for three months (from January to April). During this time, Beatriz demonstrated an exceptional level of care, attention, and dedication to my son’s well-being.</p>
+                        <p>Beatriz was always extremely punctual and responsible, attending to all of Oliver’s needs with great patience and affection. Her nurturing nature allowed her to quickly develop a special bond with him, providing a safe and loving environment in which we always felt comfortable leaving him in her care.</p>
+                        <p>In addition to being incredibly caring, Beatriz also helped keep the environment tidy and clean, always taking care of baby-related tasks with great care and organization. She went beyond what was expected, organizing fun and educational activities such as trips to the park, reading time, and creative games that contributed to Oliver’s development. Her presence made each day special and joyful for him.</p>
+                        <p>I confidently recommend Beatriz Ventura to any family looking for a reliable, attentive, and dedicated nanny. I am certain she will be a valuable addition to any child’s life.</p>
+                        <p>Sincerely,<br>Ariane<br>Mother of Oliver<br>📞 +1 (514) 707-1458</p>
+                    </div>
+                </div>
+                 <!-- Rosa -->
+                <div class="testimonial-full">
+                    <h3>Rosa Rumeo</h3>
+                     <div class="recommendation-letter">
+                        <h4>💼 English Version</h4>
+                        <p>I am writing this letter to highly recommend Beatriz Castro, who worked — and still occasionally works — as a caregiver for my mother, Angela Rumeo. Throughout their time together, Beatriz demonstrated exceptional qualities as a caregiver that went beyond what I could have hoped for.</p>
+                        <p>Beatriz is incredibly kind, smart, intuitive, and deeply compassionate. She possesses a natural ability to connect with my mom, providing not only excellent physical care but also meaningful emotional support.</p>
+                        <p>Her attention to detail, reliability, and dedication ensured that my mother was always in the best hands — both for her health and emotional well-being. What stands out most about Beatriz is her ability to stay fully focused on my mother’s best interests, always going the extra mile to make sure she was comfortable, safe, and smiling.</p>
+                        <p>Beatriz took the time to truly understand my mom’s needs, as her illness affects her speech and communication. It wasn’t easy at first, but Beatriz adjusted her care routines with patience and positivity to meet my mom’s evolving needs.</p>
+                        <p>It’s clear that Beatriz is passionate about her work, and that passion shows through in her genuine care and thoughtful approach. I have no hesitation in recommending Beatriz Castro as a caregiver.</p>
+                        <p>Please feel free to reach out if you have any questions or would like more information.</p>
+                        <p>Sincerely,<br>Rosa Rumeo<br>📞 416-317-0768<br>📧 rosarumeo@gmail.com</p>
+                    </div>
+                </div>
+                <!-- Ekaterini and Maicon -->
+                <div class="testimonial-full">
+                    <h3>Ekaterini and Maicon</h3>
+                     <div class="recommendation-letter">
+                        <h4>💼 English Version</h4>
+                        <p>October 1, 2025</p>
+                        <p>To Whom It May Concern,</p>
+                        <p>We’ve had the pleasure of having Beatriz (“Bibica”) care for our son (4 years old), and we couldn’t recommend her more highly. She has always been reliable and punctual, which gave us complete peace of mind.</p>
+                        <p>Beatriz puts real thought into planning fun, structured activities but is also very flexible and open to our suggestions. She made sure that our son’s requests were considered, keeping him engaged and happy.</p>
+                        <p>Most importantly, she is incredibly caring and patient with the kids — they love spending time with her (including our 1-year-old daughter). In fact, our son often asks where “Bibica” is on the days she isn’t with him, which says a lot about the special bond they’ve built.</p>
+                        <p>Even though our childcare needs have changed, we still call on Beatriz from time to time because of the wonderful connection she has with our family. Any family would be lucky to have her.</p>
+                        <p>Please feel free to reach out if you’d like to hear more about our experience.</p>
+                        <p>Warm regards,<br>Ekaterini and Maicon<br>📞 647-686-0524</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- TEXT TRANSLATION ENGINE ---
+        const translations = {
+            pt: {
+                logoText: "Beatriz Castro",
+                navHome: "Início",
+                navAbout: "Sobre",
+                navServices: "Serviços",
+                navTestimonials: "Depoimentos",
+                navContact: "Contato",
+                heroTitle1: "Cuidado e Carinho para",
+                heroTitle2: "Quem Você Mais Ama",
+                heroSubtitle: "Serviços profissionais de babá e cuidadora em Toronto. Experiência, certificações e um amor genuíno por cuidar de pessoas.",
+                heroButton: "Agende uma conversa",
+                missionText: "✨ Minha missão: Cuidar é mais do que um trabalho para mim — é um gesto de amor diário. Tenho orgulho do que faço e sou grata por cada família que confia em mim. 💖",
+                aboutMeButton: "🌸 Sobre Mim",
+                whyChooseMe1: "Por que me",
+                whyChooseMe2: "escolher?",
+                whyChooseMeSubtitle: "Sou uma profissional dedicada ao bem-estar e desenvolvimento de cada pessoa, com certificações e experiência comprovada.",
+                qualificationsCPR: "Certificada em CPR (reanimação cardiorrespiratória)",
+                qualificationsFirstAid: "Certificada em First Aid (primeiros socorros)",
+                qualificationsLanguages: "Falo inglês, português e espanhol",
+                qualificationsExperience: "Experiência com crianças, idosos e pessoas com necessidades especiais",
+                qualificationsReferences: "Referências verificadas",
+                qualificationsBackground: "Background check aprovado",
+                servicesTitle: "⭐ Meus Serviços",
+                servicesSubtitle: "Ofereço cuidados personalizados e de qualidade para cada necessidade, com foco no bem-estar e na segurança.",
+                servicesOfferTitle: "🧸 O que posso oferecer",
+                servicesOffer1Title: "Rotinas e Alimentação",
+                servicesOffer1Desc: "Rotinas diárias de cuidado e alimentação.",
+                servicesOffer2Title: "Atividades Criativas",
+                servicesOffer2Desc: "Atividades educativas e criativas.",
+                servicesOffer3Title: "Passeios ao Ar Livre",
+                servicesOffer3Desc: "Passeios ao ar livre e caminhadas no parque.",
+                servicesOffer4Title: "Apoio Escolar",
+                servicesOffer4Desc: "Cuidados após a escola e preparo de refeições.",
+                servicesOffer5Title: "Rotinas de Sono",
+                servicesOffer5Desc: "Apoio nas rotinas de sono e cuidados noturnos.",
+                servicesOffer6Title: "Cuidados Especiais",
+                servicesOffer6Desc: "Assistência a pessoas com deficiências e necessidades especiais.",
+                servicesExperienceTitle: "👶 Experiência com faixas etárias",
+                servicesExperience1: "Recém-nascidos",
+                servicesExperience2: "Bebês (principal especialidade)",
+                servicesExperience3: "Crianças em idade escolar",
+                servicesExperience4: "Adultos com deficiência",
+                servicesExperience5: "Idosos com necessidades especiais",
+                scheduleTitle: "🕐 Horários e Disponibilidade",
+                scheduleWeekTitle: "🗓️ Durante a semana",
+                scheduleWeekDesc: "Segunda a sexta-feira, das 8am às 7pm",
+                scheduleWeekendTitle: "🕘 Fim de semana",
+                scheduleWeekendDesc1: "Sábado, das 9am às 11pm",
+                scheduleWeekendDesc2: "Domingo, das 9am às 6pm",
+                scheduleOptionsTitle: "💡 Opções de serviço",
+                scheduleOptions1: "<strong>Part-time:</strong> mínimo de 4h por dia",
+                scheduleOptions2: "<strong>Full-time:</strong> mínimo de 8h por dia",
+                scheduleOptions3: "<strong>Overnight:</strong> mínimo de 4h por noite",
+                scheduleRatesTitle: "💰 Valores",
+                scheduleRates1: "<strong>Segunda a sexta-feira:</strong> $25/hora",
+                scheduleRates2: "<strong>Finais de semana:</strong> $30/hora",
+                scheduleRates3: "<strong>Feriados:</strong> $35/hora",
+                testimonialsTitle: "💬 O que os Pais Dizem",
+                testimonialsSubtitle: "Depoimentos resumidos de famílias satisfeitas com meus serviços.",
+                testimonial1Text: "“Beatriz é uma excelente profissional! Meus filhos adoram passar o tempo com ela. Muito responsável e carinhosa.”",
+                testimonial2Text: "“Muito paciente e dedicada. Sempre pontual, carinhosa e confiável. Meu filho ama os momentos com ela.”",
+                testimonial3Text: "“Recomendo 100%! Sempre atenciosa e muito profissional. Meu filho ama os dias em que ela vem cuidar dele.”",
+                testimonialsButton: "💬 Depoimentos Completos das Famílias",
+                contactTitle: "Entre em Contato",
+                contactInfoTitle: "💜 Informações de Contato",
+                contactInfoSubtitle: "⭐ Babá e cuidadora experiente e carinhosa em Toronto<br>Certificada em CPR & First Aid | Confiável & Amorosa 💛",
+                contactConnectTitle: "💌 Conecte-se Comigo",
+                aboutModalTitle: "🌸 Sobre Mim",
+                aboutModalP1: "Olá, famílias! 🌷<br>Meu nome é Beatriz, tenho 24 anos, sou brasileira e moro no Canadá há dois anos.",
+                aboutModalP2: "Desde que cheguei, trabalho como babá profissional — não apenas por profissão, mas por amor ao que faço. Cuidar de crianças me traz felicidade e propósito: acompanhar o crescimento, o aprendizado e o sorriso de cada pequeno é o que me motiva todos os dias. 💛",
+                aboutModalP3: "Tenho mais de 6 anos de experiência com crianças, adultos e idosos, incluindo pessoas com deficiências e necessidades especiais. Sou uma pessoa responsável, paciente e dedicada, certificada em Primeiros Socorros (First Aid) e RCP (CPR).",
+                aboutModalP4: "Meu foco principal é o cuidado com bebês e crianças pequenas, oferecendo um ambiente seguro, amoroso e acolhedor, onde cada criança possa se sentir protegida e feliz.",
+                testimonialsModalTitle: "💬 Depoimentos Completos"
+            },
+            en: {
+                logoText: "Beatriz Castro",
+                navHome: "Home",
+                navAbout: "About",
+                navServices: "Services",
+                navTestimonials: "Testimonials",
+                navContact: "Contact",
+                heroTitle1: "Care and Affection for",
+                heroTitle2: "The Ones You Love Most",
+                heroSubtitle: "Professional babysitting and caregiving services in Toronto. Experience, certifications, and a genuine love for caring for people.",
+                heroButton: "Schedule a conversation",
+                missionText: "✨ My mission: Caring is more than a job for me—it's a daily act of love. I am proud of what I do and grateful for every family that trusts me. 💖",
+                aboutMeButton: "🌸 About Me",
+                whyChooseMe1: "Why",
+                whyChooseMe2: "choose me?",
+                whyChooseMeSubtitle: "I am a professional dedicated to the well-being and development of each person, with certifications and proven experience.",
+                qualificationsCPR: "Certified in CPR (Cardiopulmonary Resuscitation)",
+                qualificationsFirstAid: "Certified in First Aid",
+                qualificationsLanguages: "I speak English, Portuguese, and Spanish",
+                qualificationsExperience: "Experience with children, seniors, and people with special needs",
+                qualificationsReferences: "Verified references",
+                qualificationsBackground: "Background check approved",
+                servicesTitle: "⭐ My Services",
+                servicesSubtitle: "I offer personalized, quality care for every need, focusing on well-being and safety.",
+                servicesOfferTitle: "🧸 What I can offer",
+                servicesOffer1Title: "Routines and Feeding",
+                servicesOffer1Desc: "Daily care and feeding routines.",
+                servicesOffer2Title: "Creative Activities",
+                servicesOffer2Desc: "Educational and creative activities.",
+                servicesOffer3Title: "Outdoor Walks",
+                servicesOffer3Desc: "Outdoor outings and walks in the park.",
+                servicesOffer4Title: "After-School Support",
+                servicesOffer4Desc: "After-school care and meal preparation.",
+                servicesOffer5Title: "Sleep Routines",
+                servicesOffer5Desc: "Support with sleep routines and overnight care.",
+                servicesOffer6Title: "Special Care",
+                servicesOffer6Desc: "Assistance for people with disabilities and special needs.",
+                servicesExperienceTitle: "👶 Experience with age groups",
+                servicesExperience1: "Newborns",
+                servicesExperience2: "Infants (my main specialty)",
+                servicesExperience3: "School-aged children",
+                servicesExperience4: "Adults with disabilities",
+                servicesExperience5: "Seniors with special needs",
+                scheduleTitle: "🕐 Hours and Availability",
+                scheduleWeekTitle: "🗓️ During the week",
+                scheduleWeekDesc: "Monday to Friday, from 8am to 7pm",
+                scheduleWeekendTitle: "🕘 Weekend",
+                scheduleWeekendDesc1: "Saturday, from 9am to 11pm",
+                scheduleWeekendDesc2: "Sunday, from 9am to 6pm",
+                scheduleOptionsTitle: "💡 Service options",
+                scheduleOptions1: "<strong>Part-time:</strong> minimum of 4h per day",
+                scheduleOptions2: "<strong>Full-time:</strong> minimum of 8h per day",
+                scheduleOptions3: "<strong>Overnight:</strong> minimum of 4h per night",
+                scheduleRatesTitle: "💰 Rates",
+                scheduleRates1: "<strong>Monday to Friday:</strong> $25/hour",
+                scheduleRates2: "<strong>Weekends:</strong> $30/hour",
+                scheduleRates3: "<strong>Holidays:</strong> $35/hour",
+                testimonialsTitle: "💬 What Parents Say",
+                testimonialsSubtitle: "Summary of testimonials from families satisfied with my services.",
+                testimonial1Text: "“Beatriz is an excellent professional! My children love spending time with her. Very responsible and caring.”",
+                testimonial2Text: "“Very patient and dedicated. Always punctual, affectionate, and reliable. My son loves the moments with her.”",
+                testimonial3Text: "“I recommend her 100%! Always attentive and very professional. My son loves the days she comes to take care of him.”",
+                testimonialsButton: "💬 Full Family Testimonials",
+                contactTitle: "Get in Touch",
+                contactInfoTitle: "💜 Contact Information",
+                contactInfoSubtitle: "⭐ Experienced and caring babysitter & caregiver in Toronto<br>Certified in CPR & First Aid | Reliable & Loving 💛",
+                contactConnectTitle: "💌 Connect With Me",
+                aboutModalTitle: "🌸 About Me",
+                aboutModalP1: "Hello, families! 🌷<br>My name is Beatriz, I am 24 years old, I am Brazilian, and I have been living in Canada for two years.",
+                aboutModalP2: "Since I arrived, I have been working as a professional nanny—not just as a profession, but out of love for what I do. Taking care of children brings me happiness and purpose: watching the growth, learning, and smile of each little one is what motivates me every day. 💛",
+                aboutModalP3: "I have more than 6 years of experience with children, adults, and seniors, including people with disabilities and special needs. I am a responsible, patient, and dedicated person, certified in First Aid and CPR.",
+                aboutModalP4: "My main focus is caring for babies and young children, providing a safe, loving, and welcoming environment where every child can feel protected and happy.",
+                testimonialsModalTitle: "💬 Full Testimonials"
+            }
+        };
+
+        const langPtBtn = document.getElementById('lang-pt');
+        const langEnBtn = document.getElementById('lang-en');
+        const testimonialsPt = document.getElementById('testimonials-content-pt');
+        const testimonialsEn = document.getElementById('testimonials-content-en');
+        let currentLang = 'pt';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+            
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            langPtBtn.classList.toggle('active', lang === 'pt');
+            langEnBtn.classList.toggle('active', lang === 'en');
+            
+            if (testimonialsPt && testimonialsEn) {
+                testimonialsPt.style.display = lang === 'pt' ? 'block' : 'none';
+                testimonialsEn.style.display = lang === 'en' ? 'block' : 'none';
+            }
+        }
+
+        langPtBtn.addEventListener('click', () => switchLanguage('pt'));
+        langEnBtn.addEventListener('click', () => switchLanguage('en'));
+
+        // --- MOBILE MENU ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = mobileNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = isActive ? '&times;' : '☰';
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '☰';
+            });
+        });
+
+        // --- MODAL LOGIC ---
+        function setupModal(modalId, openBtnId, closeBtnId) {
+            const modal = document.getElementById(modalId);
+            const openBtn = document.getElementById(openBtnId);
+            const closeBtn = document.getElementById(closeBtnId);
+
+            if (!modal || !openBtn || !closeBtn) return;
+            
+            const openModal = () => modal.classList.add('active');
+            const closeModal = () => modal.classList.remove('active');
+            
+            openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        setupModal('aboutModal', 'openAboutModal', 'closeAboutModal');
+        setupModal('testimonialsModal', 'openTestimonialsModal', 'closeTestimonialsModal');
+
+        // --- HERO BACKGROUND SLIDESHOW ---
+        const bgImages = document.querySelectorAll('.hero-bg .bg-image');
+        let currentImageIndex = 0;
+        setInterval(() => {
+            bgImages[currentImageIndex].classList.remove('visible');
+            currentImageIndex = (currentImageIndex + 1) % bgImages.length;
+            bgImages[currentImageIndex].classList.add('visible');
+        }, 7000);
+
+        // --- HEADER SCROLL EFFECT ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+    });
+    </script>
+</body>
+</html>
+
